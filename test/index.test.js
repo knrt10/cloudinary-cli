@@ -15,12 +15,4 @@ describe('upload', () => {
   it('get env file', () => {
     expect(file(data)).toMatchSnapshot()
   })
-
-  it('error if no api is given', () => {
-    expect(upload()).toMatchSnapshot()
-  })
-
-  it('succesfully upload file', () => {
-    expect(upload(parameter)).toMatchSnapshot()
-  })
 })
