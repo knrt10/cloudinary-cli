@@ -1,0 +1,37 @@
+{
+  "name": "cloudinary-cli",
+  "version": "0.0.1",
+  "description": "Upload images to cloudinary.com using your command line.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest && standard",
+    "start": "node index.js -h",
+    "env": "node index.js env"
+  },
+  "keywords": [
+    "cloudinary",
+    "cloudinary-cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knrt10/cloudinary-cli"
+  },
+  "author": "Kautilya Tripathi <tripathi.kautilya@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.4.3",
+    "nodemon": "^1.17.3",
+    "standard": "^11.0.1"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "dependencies": {
+    "cloudinary": "^1.11.0",
+    "commander": "^2.15.1",
+    "dotenv": "^5.0.1",
+    "inquirer": "^5.2.0"
+  }
+}

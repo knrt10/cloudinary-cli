@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`upload error if no api is given 1`] = `undefined`;
+
+exports[`upload get env file 1`] = `undefined`;
+
+exports[`upload succesfully upload file 1`] = `undefined`;
