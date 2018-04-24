@@ -17,17 +17,17 @@ Upload images to **cloudinary.com** using your command line.
 
 **Install modules**
 
-`npm Install`
+`npm install`
 
 **Set env file**
 
-`npm run env`
+`node index env`
 
 This will ask for your cloudinary configuration which you can get from [cloudinary console](https://cloudinary.com/console/)
 
 # Usage
 
-Run `npm start` to see commands you can use
+Run `node index -h` to see commands you can use
 
 # How to upload
 

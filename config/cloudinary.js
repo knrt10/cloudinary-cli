@@ -10,16 +10,17 @@ cloudinary.config({
 
 function upload (path) {
   ui.log.write('Uploading...')
-  cloudinary.uploader.upload(path, function (result) {
+  cloudinary.uploader.upload(path, function (result, next) {
     if (result.error) {
       return console.log(result.error)
     } else {
       ui.log.write('Uploaded')
-      return console.log(`publicID: ${result.public_id}
+      console.log(`publicID: ${result.public_id}
 width: ${result.width}
 height: ${result.height}
 url: ${result.url || result.secure_url}`)
     }
+    return next()
   })
 }
 

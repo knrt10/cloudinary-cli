@@ -55,11 +55,11 @@ program
   .command('upload <file>')
   .alias('u')
   .description('Uploads file')
-  .action(function (file) {
+  .action(function (file, next) {
     if (!file) {
       throw new Error('Please enter path to file')
     }
-    upload(file)
+    upload(file, next)
   })
 
   /**

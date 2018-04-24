@@ -8,9 +8,9 @@ API_SECRET=${data.API_SECRET}`
 
   fs.writeFile('.env', template, function (err) {
     if (err) {
-      return console.log(err)
+      console.log(err)
     }
-    return console.log('The file was saved!')
+    console.log('The file was saved!')
   })
 }
 

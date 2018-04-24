@@ -1,6 +1,6 @@
 {
   "name": "cloudinary-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Upload images to cloudinary.com using your command line.",
   "main": "index.js",
   "scripts": {
