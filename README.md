@@ -1,6 +1,10 @@
 # cloudinary-cli
 Upload images to **cloudinary.com** using your command line.
 
+# Preview
+
+<img src = "http://res.cloudinary.com/dsyvg5xwi/image/upload/v1524571153/tgv5ka5ygvwwzjjnd4hc.gif"/>
+
 # Installation
 
 **Install the repository**
