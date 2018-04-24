@@ -10,8 +10,7 @@ API_SECRET=${data.API_SECRET}`
     if (err) {
       return console.log(err)
     }
-
-    return 'The file was saved!'
+    return console.log('The file was saved!')
   })
 }
 
