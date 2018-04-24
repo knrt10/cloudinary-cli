@@ -3,7 +3,7 @@ Upload images to **cloudinary.com** using your command line.
 
 # Preview
 
-<img src = "http://res.cloudinary.com/dsyvg5xwi/image/upload/v1524571153/tgv5ka5ygvwwzjjnd4hc.gif"/>
+<img src = "http://res.cloudinary.com/dsyvg5xwi/image/upload/v1524577572/zhezvhewzdfmj0l0akzy.gif"/>
 
 # Installation
 
@@ -21,13 +21,13 @@ Upload images to **cloudinary.com** using your command line.
 
 **Set env file**
 
-`node index env`
+`npm run env`
 
 This will ask for your cloudinary configuration which you can get from [cloudinary console](https://cloudinary.com/console/)
 
 # Usage
 
-Run `node index -h` to see commands you can use
+Run `npm start` to see commands you can use
 
 # How to upload
 

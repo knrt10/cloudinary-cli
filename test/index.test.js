@@ -1,4 +1,4 @@
-
+require('..')
 const file = require('../config/file')
 
 describe('upload', () => {
