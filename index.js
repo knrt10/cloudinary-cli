@@ -6,6 +6,7 @@ require('dotenv').config()
 const program = require('commander')
 const {prompt} = require('inquirer')
 const file = require('./config/file')
+const upload = require('./config/cloudinary')
 
 /**
  * setting questions for env file
@@ -48,7 +49,7 @@ const questionEnv = [
 
 /**
    * setting command to set env file
-  */
+*/
 
 program
   .command('env')
@@ -67,34 +68,21 @@ program
 program
   .command('upload <file>')
   .alias('u')
-  .description('Uploads file')
-  .action(function (file, next) {
+  .description('Uploads file (can add multiple)')
+  .option('-a, --array', 'Upload more than 1 file')
+  .action(function (file, options, next) {
     if (!file) {
       throw new Error('Please enter path to file')
     }
-    const cloudinary = require('cloudinary')
-    const inquirer = require('inquirer')
-    var ui = new inquirer.ui.BottomBar()
-
-    cloudinary.config({
-      cloud_name: process.env.CLOUD_NAME,
-      api_key: process.env.API_KEY,
-      api_secret: process.env.API_SECRET
-    })
-
-    ui.log.write('Uploading...')
-    cloudinary.uploader.upload(file, function (result, next) {
-      if (result.error) {
-        return console.log(result.error)
-      } else {
-        ui.log.write('Uploaded')
-        console.log(`publicID: ${result.public_id}
-width: ${result.width}
-height: ${result.height}
-url: ${result.url || result.secure_url}`)
-      }
-      return next()
-    })
+    if (options.array) {
+      const array = []
+      array.push(file, program.args)
+      const files = array.toString().split(',')
+      upload(files, next)
+    } else {
+      upload([file], next)
+    }
+    console.log('Uploading...')
   })
 
 program.parse(process.argv)

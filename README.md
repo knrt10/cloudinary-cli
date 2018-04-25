@@ -1,5 +1,12 @@
-# cloudinary-cli
+# cloudinary-cli (WIP)
 Upload images to **cloudinary.com** using your command line.
+
+# To-Do
+
+- [x] Add multiple file upload feature
+- [ ] Add fetch images feature
+- [ ] Add delete file feature
+- [ ] Add more tests
 
 # Preview
 
@@ -28,7 +35,12 @@ This will ask for your cloudinary configuration which you can get from [cloudina
 # Usage
 
 Run `npm start` to see commands you can use
+Run `node index <command> -h` to see its usage
 
 # How to upload
 
 `node index u <path to file>`
+
+To upload multiple files
+
+`node index u -a <path to file1> <path to file2> ...`
