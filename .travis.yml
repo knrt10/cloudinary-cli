@@ -6,5 +6,5 @@ notifications:
   disabled: true
 env:
   - CLOUD_NAME=anything
-  - API_KEY=anything
-  - API_SECRET=anything
+    API_KEY=anything
+    API_SECRET=anything
