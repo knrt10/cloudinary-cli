@@ -62,7 +62,7 @@ const questionDelete = [{
 }]
 
 /**
-   * setting command to set env file
+  * setting command to set env file
 */
 
 program
@@ -77,6 +77,8 @@ program
 
   /**
    * setting command to upload file
+   * @param {String} file
+   * @param {any} next
   */
 
 program
@@ -98,6 +100,7 @@ program
 
 /**
 * Setting command to list files
+* @param {String} options
 */
 
 program
@@ -119,39 +122,43 @@ program
 
 /**
 * Setting command to rename public_id
+* @param {String} publicIdOld
+* @param {String} publicIdNew
 */
 
 program
-  .command('rename <public_id_old> <public_id_new>')
+  .command('rename <publicIdOld> <publicIdNew>')
   .alias('r')
   .description('Remane your public_id')
-  .action((public_id_old, public_id_new) => {
-    update(public_id_old, public_id_new)
+  .action((publicIdOld, publicIdNew) => {
+    update(publicIdOld, publicIdNew)
   })
 
   /**
   * Setting command to delete file permanently
+  * @param {String} publicId
+  * @param {String} options
   */
 
-  program
-    .command('delete <public_id>')
-    .alias('d')
-    .description('Delete your file')
-    .option('-a, --array', 'Delete more than 1 file')
-    .action((public_id, options, next) => {
-      prompt(questionDelete).then(answers => {
-        if(answers.delete === true) {
-          if(options.array) {
-            const array = []
-            array.push(public_id, program.args)
-            const files = array.toString().split(',')
-            deleteFile(files, next)
-          } else {
-            deleteFile([public_id], next)
-          }
-          console.log('Deleting...')
+program
+  .command('delete <publicId>')
+  .alias('d')
+  .description('Delete your file')
+  .option('-a, --array', 'Delete more than 1 file')
+  .action((publicId, options, next) => {
+    prompt(questionDelete).then(answers => {
+      if (answers.delete === true) {
+        if (options.array) {
+          const array = []
+          array.push(publicId, program.args)
+          const files = array.toString().split(',')
+          deleteFile(files, next)
+        } else {
+          deleteFile([publicId], next)
         }
-      })
+        console.log('Deleting...')
+      }
     })
+  })
 
 program.parse(process.argv)
