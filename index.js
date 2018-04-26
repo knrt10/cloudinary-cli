@@ -7,6 +7,7 @@ const program = require('commander')
 const {prompt} = require('inquirer')
 const file = require('./config/file')
 const upload = require('./config/cloudinary')
+const search = require('./config/search')
 
 /**
  * setting questions for env file
@@ -68,9 +69,9 @@ program
 program
   .command('upload <file>')
   .alias('u')
-  .description('Uploads file (can add multiple)')
+  .description('Upload file')
   .option('-a, --array', 'Upload more than 1 file')
-  .action(function (file, options, next) {
+  .action((file, options, next) => {
     if (!file) {
       throw new Error('Please enter path to file')
     }
@@ -83,6 +84,23 @@ program
       upload([file], next)
     }
     console.log('Uploading...')
+  })
+
+program
+  .command('list')
+  .alias('s')
+  .description('Search files and list them')
+  .option('-a, --all', 'get all file')
+  .option('-s, --search <file>', 'Search file by publicID')
+  .option('-t, --type <tag>', 'Search by type. <tag> can be <image> or <gif>')
+  .action((options) => {
+    if (options.all) {
+      search.listAll()
+    } else if (options.search) {
+      search.searchPublicId(options.search)
+    } else if (options.type) {
+      search.searchType(options.type)
+    }
   })
 
 program.parse(process.argv)

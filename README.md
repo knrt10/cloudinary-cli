@@ -4,7 +4,7 @@ Upload images to **cloudinary.com** using your command line.
 # To-Do
 
 - [x] Add multiple file upload feature
-- [ ] Add fetch images feature
+- [x] Add fetch images feature
 - [ ] Add delete file feature
 - [ ] Add more tests
 
