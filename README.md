@@ -5,6 +5,7 @@ Upload images to **cloudinary.com** using your command line.
 
 - [x] Add multiple file upload feature
 - [x] Add fetch images feature
+- [ ] Add updating feature
 - [ ] Add delete file feature
 - [ ] Add more tests
 
@@ -44,3 +45,28 @@ Run `node index <command> -h` to see its usage
 To upload multiple files
 
 `node index u -a <path to file1> <path to file2> ...`
+
+# How to fetch
+
+`node index list -h`
+
+You will get following output
+
+```
+Options:
+
+    -a, --all            get all file
+    -s, --search <file>  Search file by publicID
+    -t, --type <tag>     Search by type. <tag> can be <image> or <gif>
+    -h, --help           output usage information
+```
+
+- To get **all files**
+  - `node index list -a`
+
+- If you **know public_id** of image you can **get particular file**
+  - `node index list -s public_id`
+
+- You can also fetch by **type of file**
+  -  For images `node index list -t image`
+  -  For gif `node index list -t gif`
