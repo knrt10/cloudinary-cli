@@ -84,7 +84,7 @@ program
 program
   .command('upload <file>')
   .alias('u')
-  .description('Upload file')
+  .description('Upload file(s)')
   .option('-a, --array', 'Upload more than 1 file')
   .action((file, options, next) => {
     if (options.array) {
@@ -106,8 +106,8 @@ program
 program
   .command('list')
   .alias('s')
-  .description('Search files and list them')
-  .option('-a, --all', 'get all file')
+  .description('Search file(s) and list them')
+  .option('-a, --all', 'get all files')
   .option('-s, --search <file>', 'Search file by publicID')
   .option('-t, --type <tag>', 'Search by type. <tag> can be <image> or <gif>')
   .action((options) => {
@@ -143,7 +143,7 @@ program
 program
   .command('delete <publicId>')
   .alias('d')
-  .description('Delete your file')
+  .description('Delete your file(s)')
   .option('-a, --array', 'Delete more than 1 file')
   .action((publicId, options, next) => {
     prompt(questionDelete).then(answers => {

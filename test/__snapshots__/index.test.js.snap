@@ -1,3 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`upload get env file 1`] = `undefined`;
+exports[`delete return error if wrong publicId 1`] = `undefined`;
+
+exports[`delete successfully delete file 1`] = `undefined`;
+
+exports[`env get env file 1`] = `undefined`;
+
+exports[`update return error if wrong old public_id 1`] = `undefined`;
+
+exports[`update successfully changes public_id 1`] = `undefined`;
+
+exports[`upload return error if wrong path 1`] = `undefined`;
+
+exports[`upload upload file successfully 1`] = `undefined`;

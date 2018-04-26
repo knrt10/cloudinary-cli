@@ -1,14 +1,6 @@
 # cloudinary-cli (WIP)
 Upload images to **cloudinary.com** using your command line.
 
-# To-Do
-
-- [x] Add multiple file upload feature
-- [x] Add fetch images feature
-- [x] Add updating feature
-- [x] Add delete file feature
-- [ ] Add more tests
-
 # Preview
 
 <img src = "http://res.cloudinary.com/dsyvg5xwi/image/upload/v1524577572/zhezvhewzdfmj0l0akzy.gif"/>
@@ -50,10 +42,10 @@ Usage: index [options] [command]
   Commands:
 
     env|e                                     Set your env file
-    upload|u [options] <file>                 Upload file
+    upload|u [options] <file>                 Upload file(s)
     list|s [options]                          Search files and list them
     rename|r <public_id_old> <public_id_new>  Remane your public_id
-    delete|d [options] <public_id>            Delete your file
+    delete|d [options] <public_id>            Delete your file(s)
 ```    
 
 Run `node index <command> -h` to see particular commands usage
@@ -68,7 +60,7 @@ Run `node index <command> -h` to see particular commands usage
 
 # How to fetch
 
-**Help**
+**Help command**
 - `node index list -h`
 
 You will get following output
@@ -76,7 +68,7 @@ You will get following output
 ```
 Options:
 
-    -a, --all            get all file
+    -a, --all            get all files
     -s, --search <file>  Search file by publicID
     -t, --type <tag>     Search by type. <tag> can be <image> or <gif>
     -h, --help           output usage information
