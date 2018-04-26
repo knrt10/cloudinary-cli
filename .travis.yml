@@ -4,3 +4,7 @@ node_js:
 - 8
 notifications:
   disabled: true
+env:
+  - CLOUD_NAME=anything
+  - API_KEY=anything
+  - API_SECRET=anything
