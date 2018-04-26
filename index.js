@@ -8,6 +8,7 @@ const {prompt} = require('inquirer')
 const file = require('./config/file')
 const upload = require('./config/cloudinary')
 const search = require('./config/search')
+const update = require('./config/update')
 
 /**
  * setting questions for env file
@@ -86,6 +87,10 @@ program
     console.log('Uploading...')
   })
 
+/**
+* Setting command to list files
+*/
+
 program
   .command('list')
   .alias('s')
@@ -101,6 +106,18 @@ program
     } else if (options.type) {
       search.searchType(options.type)
     }
+  })
+
+/**
+* Setting command to rename public_id
+*/
+
+program
+  .command('rename <public_id_old> <public_id_new>')
+  .alias('r')
+  .description('Remane your public_id')
+  .action((public_id_old, public_id_new) => {
+    update(public_id_old, public_id_new)
   })
 
 program.parse(process.argv)

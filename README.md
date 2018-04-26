@@ -5,7 +5,7 @@ Upload images to **cloudinary.com** using your command line.
 
 - [x] Add multiple file upload feature
 - [x] Add fetch images feature
-- [ ] Add updating feature
+- [x] Add updating feature
 - [ ] Add delete file feature
 - [ ] Add more tests
 
@@ -36,7 +36,26 @@ This will ask for your cloudinary configuration which you can get from [cloudina
 # Usage
 
 Run `npm start` to see commands you can use
-Run `node index <command> -h` to see its usage
+
+**Output**
+
+```
+Usage: index [options] [command]
+
+  Options:
+
+
+    -h, --help                                output usage information
+
+  Commands:
+
+    env|e                                     Set your env file
+    upload|u [options] <file>                 Upload file
+    list|s [options]                          Search files and list them
+    rename|r <public_id_old> <public_id_new>  Remane your public_id
+```    
+
+Run `node index <command> -h` to see particular commands usage
 
 # How to upload
 
@@ -64,9 +83,13 @@ Options:
 - To get **all files**
   - `node index list -a`
 
-- If you **know public_id** of image you can **get particular file**
+- If you **know public_id** of file you can **get particular file**
   - `node index list -s public_id`
 
 - You can also fetch by **type of file**
   -  For images `node index list -t image`
   -  For gif `node index list -t gif`
+
+# How to update
+
+`node index r <old public_id> <new public_id>`  
