@@ -6,7 +6,7 @@ function writeFile (data) {
 API_KEY=${data.API_KEY}
 API_SECRET=${data.API_SECRET}`
 
-  fs.writeFile('bla', template, function (err) {
+  fs.writeFile('.env', template, function (err) {
     if (err) {
       console.log(err)
     }

@@ -3,7 +3,7 @@ Upload images to **cloudinary.com** using your command line.
 
 # Preview
 
-<img src = "http://res.cloudinary.com/dsyvg5xwi/image/upload/v1524577572/zhezvhewzdfmj0l0akzy.gif"/>
+<img src = "https://user-images.githubusercontent.com/24803604/39325753-a02736d2-49b0-11e8-8aaf-fe91f2001204.gif"/>
 
 # Installation
 
