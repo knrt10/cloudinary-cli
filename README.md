@@ -6,7 +6,7 @@ Upload images to **cloudinary.com** using your command line.
 - [x] Add multiple file upload feature
 - [x] Add fetch images feature
 - [x] Add updating feature
-- [ ] Add delete file feature
+- [x] Add delete file feature
 - [ ] Add more tests
 
 # Preview
@@ -53,21 +53,23 @@ Usage: index [options] [command]
     upload|u [options] <file>                 Upload file
     list|s [options]                          Search files and list them
     rename|r <public_id_old> <public_id_new>  Remane your public_id
+    delete|d [options] <public_id>            Delete your file
 ```    
 
 Run `node index <command> -h` to see particular commands usage
 
 # How to upload
 
-`node index u <path to file>`
+**Single File**
+- `node index u <path to file>`
 
-To upload multiple files
-
-`node index u -a <path to file1> <path to file2> ...`
+**Multiple files**
+- `node index u -a <path to file1> <path to file2> <path to file3> ...`
 
 # How to fetch
 
-`node index list -h`
+**Help**
+- `node index list -h`
 
 You will get following output
 
@@ -90,6 +92,14 @@ Options:
   -  For images `node index list -t image`
   -  For gif `node index list -t gif`
 
-# How to update
+# How to update fileName
 
 `node index r <old public_id> <new public_id>`  
+
+# Delete file
+
+**Single File**
+- `node index d <public_id>`
+
+**Multiple files**
+- `node index d -a <public_id1> <public_id3> <public_id3> ...`

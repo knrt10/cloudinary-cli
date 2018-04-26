@@ -6,9 +6,10 @@ require('dotenv').config()
 const program = require('commander')
 const {prompt} = require('inquirer')
 const file = require('./config/file')
-const upload = require('./config/cloudinary')
+const upload = require('./config/upload')
 const search = require('./config/search')
 const update = require('./config/update')
+const deleteFile = require('./config/delete')
 
 /**
  * setting questions for env file
@@ -50,6 +51,17 @@ const questionEnv = [
   }]
 
 /**
+* Confirm question before delete
+*/
+
+const questionDelete = [{
+  type: 'confirm',
+  name: 'delete',
+  message: 'Are you sure you wanna delete this file ?',
+  default: false
+}]
+
+/**
    * setting command to set env file
 */
 
@@ -73,9 +85,6 @@ program
   .description('Upload file')
   .option('-a, --array', 'Upload more than 1 file')
   .action((file, options, next) => {
-    if (!file) {
-      throw new Error('Please enter path to file')
-    }
     if (options.array) {
       const array = []
       array.push(file, program.args)
@@ -119,5 +128,30 @@ program
   .action((public_id_old, public_id_new) => {
     update(public_id_old, public_id_new)
   })
+
+  /**
+  * Setting command to delete file permanently
+  */
+
+  program
+    .command('delete <public_id>')
+    .alias('d')
+    .description('Delete your file')
+    .option('-a, --array', 'Delete more than 1 file')
+    .action((public_id, options, next) => {
+      prompt(questionDelete).then(answers => {
+        if(answers.delete === true) {
+          if(options.array) {
+            const array = []
+            array.push(public_id, program.args)
+            const files = array.toString().split(',')
+            deleteFile(files, next)
+          } else {
+            deleteFile([public_id], next)
+          }
+          console.log('Deleting...')
+        }
+      })
+    })
 
 program.parse(process.argv)
