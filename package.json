@@ -1,16 +1,18 @@
 {
-  "name": "cloudinary-cli",
-  "version": "0.0.2",
-  "description": "Upload images to cloudinary.com using your command line.",
+  "name": "cloudinary-cli-tool",
+  "version": "0.0.6",
+  "description": "Manage images from cloudinary.com using your command line.",
+  "bin": {
+    "cloudTool": "index.js"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "jest && standard",
-    "start": "node index.js -h",
-    "env": "node index.js env"
+    "test": "jest && standard --fix"
   },
   "keywords": [
     "cloudinary",
-    "cloudinary-cli"
+    "cloudinary-cli",
+    "cloudinary-cli-tool"
   ],
   "repository": {
     "type": "git",
@@ -31,7 +33,6 @@
   "dependencies": {
     "cloudinary": "^1.11.0",
     "commander": "^2.15.1",
-    "dotenv": "^5.0.1",
     "inquirer": "^5.2.0"
   }
 }

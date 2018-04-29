@@ -1,12 +1,14 @@
 const fs = require('fs')
+const path = require('path')
 
 function writeFile (data) {
-  const template =
-  `CLOUD_NAME=${data.CLOUD_NAME}
-API_KEY=${data.API_KEY}
-API_SECRET=${data.API_SECRET}`
+  const template = `module.exports = {
+  CLOUD_NAME:"${data.CLOUD_NAME}",
+  API_KEY: "${data.API_KEY}",
+  API_SECRET: "${data.API_SECRET}"
+}`
 
-  fs.writeFile('.env', template, function (err) {
+  fs.writeFile(path.resolve(__dirname, '../config.env'), Object(template), function (err) {
     if (err) {
       console.log(err)
     }

@@ -1,15 +1,16 @@
+#!/usr/bin/env node
+
 /**
  * Module dependencies
 */
-require('dotenv').config()
 
-const program = require('commander')
-const {prompt} = require('inquirer')
 const file = require('./config/file')
 const upload = require('./config/upload')
 const search = require('./config/search')
 const update = require('./config/update')
 const deleteFile = require('./config/delete')
+const program = require('commander')
+const {prompt} = require('inquirer')
 
 /**
  * setting questions for env file

@@ -6,36 +6,28 @@ Upload images to **cloudinary.com** using your command line.
 
 # Preview
 
-<img src = "https://user-images.githubusercontent.com/24803604/39325753-a02736d2-49b0-11e8-8aaf-fe91f2001204.gif"/>
+<img src = "https://user-images.githubusercontent.com/24803604/39407712-f0c2cbcc-4be7-11e8-93ee-9c417d62bf5a.gif"/>
 
 # Installation
 
-**Install the repository**
+**NPM**
 
-`git clone https://github.com/knrt10/cloudinary-cli.git`
-
-**cd to project folder**
-
-`cd cloudinaryCLI`
-
-**Install modules**
-
-`npm install`
+`npm i --global cloudinary-cli-tool`
 
 **Set env file**
 
-`npm run env`
+`cloudTool env`
 
 This will ask for your cloudinary configuration which you can get from [cloudinary console](https://cloudinary.com/console/)
 
 # Usage
 
-Run `npm start` to see commands you can use
+Run `cloudTool -h` to see commands you can use
 
 **Output**
 
 ```
-Usage: index [options] [command]
+Usage: cloudTool [options] [command]
 
  Options:
 
@@ -51,20 +43,20 @@ Usage: index [options] [command]
    delete|d [options] <public_id>            Delete your file(s)
 ```    
 
-Run `node index <command> -h` to see particular commands usage
+Run `cloudTool <command> -h` to see particular commands usage
 
 # How to upload
 
 **Single File**
-- `node index u <path to file>`
+- `cloudTool u <path to file>`
 
 **Multiple files**
-- `node index u -a <path to file1> <path to file2> <path to file3> ...`
+- `cloudTool u -a <path to file1> <path to file2> <path to file3> ...`
 
 # How to fetch
 
 **Help command**
-- `node index list -h`
+- `cloudTool list -h`
 
 You will get following output
 
@@ -78,23 +70,23 @@ Options:
 ```
 
 - To get **all files**
- - `node index list -a`
+ - `cloudTool list -a`
 
 - If you **know public_id** of file you can **get particular file**
- - `node index list -s public_id`
+ - `cloudTool list -s public_id`
 
 - You can also fetch by **type of file**
- -  For images `node index list -t image`
- -  For gif `node index list -t gif`
+ -  For images `cloudTool list -t image`
+ -  For gif `cloudTool list -t gif`
 
 # How to update fileName
 
-`node index r <old public_id> <new public_id>`  
+`cloudTool r <old public_id> <new public_id>`  
 
 # Delete file
 
 **Single File**
-- `node index d <public_id>`
+- `cloudTool d <public_id>`
 
 **Multiple files**
-- `node index d -a <public_id1> <public_id3> <public_id3> ...`
+- `cloudTool d -a <public_id1> <public_id3> <public_id3> ...`
