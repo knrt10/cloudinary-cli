@@ -1,6 +1,6 @@
 {
   "name": "cloudinary-cli-tool",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "description": "Manage images from cloudinary.com using your command line.",
   "bin": {
     "cloudTool": "index.js"

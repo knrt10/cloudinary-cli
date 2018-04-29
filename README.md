@@ -69,13 +69,13 @@ Options:
    -h, --help           output usage information
 ```
 
-- To get **all files**
+ To get **all files**
  - `cloudTool list -a`
 
-- If you **know public_id** of file you can **get particular file**
+ If you **know public_id** of file you can **get particular file**
  - `cloudTool list -s public_id`
 
-- You can also fetch by **type of file**
+ You can also fetch by **type of file**
  -  For images `cloudTool list -t image`
  -  For gif `cloudTool list -t gif`
 
